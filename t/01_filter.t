@@ -31,9 +31,14 @@ my @objs = map { @{ $filter->get($_) } } [ "[1,", "2" ], [ "]" ];
 
 is_deeply( \@objs, [[1, 2]], "incr input" );
 
-$filter->get_one_start(['{"fo', 'o":', '3}']);
+$filter->get_one_start(['{"fo', 'o":', '3}[', ']']);
+
+is_deeply( $filter->get_pending, [{foo => 3}, []], "get_pending" );
 
 is_deeply( $filter->get_one, [{foo => 3}], "inc input, get_one style" );
+is_deeply( $filter->get_one, [[]], "inc input, get_one style" );
 is_deeply( $filter->get_one, [], "buffer empty" );
+
+is( $filter->get_pending, undef, "nothing pending" );
 
 is_deeply( $filter->get([ "[", "]", "[1", "]", "foo", "{}"]), [[], [1],{}], "input errors" );
