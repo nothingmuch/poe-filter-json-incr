@@ -8,6 +8,8 @@ use POE::Filter::JSON::Incr::Error;
 
 use namespace::clean -except => [qw(meta)];
 
+our $VERSION = "0.01";
+
 extends our @ISA, qw(POE::Filter);
 
 # with qw(MooseX::Clone)
