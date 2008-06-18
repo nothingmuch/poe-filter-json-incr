@@ -3,14 +3,14 @@
 package POE::Filter::JSON::Incr;
 use Squirrel;
 
-# with qw(MooseX::Clone)
-
 use JSON;
 use POE::Filter::JSON::Incr::Error;
 
 use namespace::clean -except => [qw(meta)];
 
 extends our @ISA, qw(POE::Filter);
+
+# with qw(MooseX::Clone)
 
 sub clone {
 	my ( $self, @args ) = @_;
