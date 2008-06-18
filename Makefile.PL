@@ -12,6 +12,10 @@ WriteMakefile(
 	PL_FILES     => { },
 	PREREQ_PM    => {
 		'Test::use::ok' => 0,
+		'JSON' => '2.09', # incr api
+		'Mouse' => '0.04',
+		'POE::Filter' => 0,
+		'namespace::clean' => '0.08',
 	},
 );
 
