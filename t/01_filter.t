@@ -42,3 +42,10 @@ is_deeply( $filter->get_one, [], "buffer empty" );
 is( $filter->get_pending, undef, "nothing pending" );
 
 is_deeply( $filter->get([ "[", "]", "[1", "]", "foo", "{}"]), [[], [1],{}], "input errors" );
+
+if ( $filter->meta->can("clone_object" ) ) {
+	$filter->get_one_start(['{}']);
+	my $clone = $filter->clone;
+	isa_ok( $clone, "POE::Filter::JSON::Incr" );
+	is_deeply( $clone->buffer, [], "buffer empty" );
+}
