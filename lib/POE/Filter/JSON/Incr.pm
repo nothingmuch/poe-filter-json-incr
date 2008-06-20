@@ -135,7 +135,7 @@ sub json_error {
 
 sub put {
 	my ( $self, $data ) = @_;
-	return [ map { $self->encode($_) } @$data ];
+	return [ map { $self->encode($_) . "\n" } @$data ];
 }
 
 sub get_pending {
