@@ -1,14 +1,14 @@
 #!/usr/bin/perl
 
 package POE::Filter::JSON::Incr;
-use Squirrel;
+use Any::Moose;
 
 use JSON;
 use POE::Filter::JSON::Incr::Error;
 
 use namespace::clean -except => [qw(meta)];
 
-our $VERSION = "0.01";
+our $VERSION = "0.03";
 
 extends our @ISA, qw(POE::Filter);
 

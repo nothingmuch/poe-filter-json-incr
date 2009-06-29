@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 package POE::Filter::JSON::Incr::Error;
-use Squirrel;
+use Any::Moose;
 
 has error => (
 	is => "ro",

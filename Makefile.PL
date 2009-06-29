@@ -13,7 +13,7 @@ WriteMakefile(
 	PREREQ_PM    => {
 		'Test::use::ok' => 0,
 		'JSON' => '2.12', # incr api with bugfixes
-		'Mouse' => '0.04',
+		'Any::Moose' => '0',
 		'POE::Filter' => 0,
 		'namespace::clean' => '0.08',
 	},
